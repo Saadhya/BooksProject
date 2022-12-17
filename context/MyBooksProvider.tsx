@@ -25,6 +25,7 @@ type Props = {
 
 const MyBooksProvider = ({ children }: Props) => {
   const [savedBooks, setSavedBooks] = useState<Book[]>([]);
+  // const [currentlyReading, setCurrentlyReading] = useState<Book[]>([]); //persist data 
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
