@@ -1,13 +1,11 @@
 import { FlatList, StyleSheet } from "react-native";
 
 import { View } from "../components/Themed";
-import { useContext } from "react";
-import { MyBooksContext, useMyBooks } from "../context/MyBooksProvider";
+import { useMyBooks } from "../context/MyBooksProvider";
 import BookItem from "../components/BookItem";
 
-export default function TabTwoScreen() {
+export default function MyBookScreen() {
   const { savedBooks } = useMyBooks();
-  // const { test } = useContext(MyBooksContext);
   // console.log(savedBooks);
 
   return (
@@ -23,7 +21,7 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding:10,
+    padding: 10,
     // alignItems: "center",
     // justifyContent: "center",
   },
