@@ -5,6 +5,7 @@ import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
 import Navigation from "./navigation";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import MyBooksProvider from "./context/MyBooksProvider";
 
 const API_KEY =
   "sarajevo::stepzen.net+1000::56b3cf74abc045007ced50ac6a25dca4e867a99293cf41be35772e62b4afcc97";
@@ -27,7 +28,9 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <ApolloProvider client={client}>
-          <Navigation colorScheme={colorScheme} />
+          <MyBooksProvider >
+            <Navigation colorScheme={colorScheme} />
+          </MyBooksProvider>
         </ApolloProvider>
         <StatusBar />
       </SafeAreaProvider>
